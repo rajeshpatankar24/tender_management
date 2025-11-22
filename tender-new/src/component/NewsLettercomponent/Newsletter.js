@@ -17,7 +17,7 @@ function Newsletter() {
     }
 
     try {
-      const response = await axios.post(__newsletterapiurl+'newsletter', { email });
+      const response = await axios.post(__newsletterapiurl, { email });
       toast.success(`✅ ${response.data.message}`);
       setEmail('');
     } catch (err) {

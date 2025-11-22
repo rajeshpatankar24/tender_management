@@ -1,1 +1,366 @@
+.container-xxl {
+  animation: fadeIn 0.8s ease;
+}
 
+.about-hero {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.bg-light {
+  background: linear-gradient(135deg, #f8fafc 0%, #fef3c7 100%) !important;
+}
+
+.text-secondary {
+  color: #10b981 !important;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #1e293b;
+  font-weight: 800;
+}
+
+.display-5 {
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+.display-6 {
+  font-size: 2.5rem;
+}
+
+p {
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* About Stats */
+.about-stat {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.about-stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.about-stat h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.about-stat p {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* About Badge */
+.about-badge {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Mission Cards */
+.mission-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #f59e0b, #10b981);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.mission-card:hover::before {
+  transform: scaleX(1);
+}
+
+.mission-icon {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: all 0.4s ease;
+}
+
+.mission-icon i {
+  color: #f59e0b;
+  transition: all 0.4s ease;
+}
+
+.mission-card:hover .mission-icon {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.mission-card:hover .mission-icon i {
+  color: white;
+}
+
+/* Value Cards */
+.value-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+.value-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  transition: all 0.3s ease;
+}
+
+.value-icon i {
+  color: #2563eb;
+  transition: all 0.3s ease;
+}
+
+.value-card:hover .value-icon {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform: scale(1.1);
+}
+
+.value-card:hover .value-icon i {
+  color: white;
+}
+
+/* Feature Boxes */
+.feature-box {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, #f59e0b, #10b981);
+  transform: scaleY(0);
+  transition: transform 0.4s ease;
+}
+
+.feature-box:hover {
+  transform: translateX(10px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+.feature-box:hover::before {
+  transform: scaleY(1);
+}
+
+.feature-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f59e0b;
+  opacity: 0.2;
+  line-height: 1;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.feature-box:hover .feature-number {
+  opacity: 0.4;
+  transform: scale(1.1);
+}
+
+/* Team Cards */
+.team-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+.team-avatar {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 32px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.team-card:hover .team-avatar {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+}
+
+.team-social .btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.team-social .btn:hover {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+  transform: translateY(-3px);
+}
+
+/* CTA Section */
+.bg-primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+}
+
+.btn-light {
+  background: white;
+  color: #2563eb;
+  font-weight: 700;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+  color: #1d4ed8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wow {
+  animation: fadeIn 1s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .display-5 {
+    font-size: 2rem;
+  }
+  
+  .display-6 {
+    font-size: 1.75rem;
+  }
+  
+  .about-stat h2 {
+    font-size: 2rem;
+  }
+  
+  .about-badge {
+    bottom: 15px;
+    right: 15px;
+    padding: 20px;
+  }
+  
+  .mission-card,
+  .feature-box {
+    padding: 24px;
+  }
+  
+  .mission-icon {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .team-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+  }
+}

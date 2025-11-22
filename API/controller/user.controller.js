@@ -14,12 +14,12 @@ export const save =async (req,res)=>{
     var _id = l==0?1:userList[l-1]._id+1; // increment id if list is not empty and userList[l-1] returns a id value,after that id increment by 1
     const userDetails = {...req.body,"_id":_id,"status":1,"role":"user","info":Date()};
     const password = userDetails.password;
-    // const hashedPassword = await bcrypt.hash(password, 10);
-    // userDetails.password = hashedPassword;
+    const hashedPassword = await bcrypt.hash(password, 10);
+    userDetails.password = hashedPassword;
     // console.log(userDetails)
      try{
         await UserSchemaModel.create(userDetails)
-        senMail(userDetails.email,userDetails.password);
+        senMail(userDetails.email,password); // Send original password in email
         res.status(200).json({"status":true});
      }
      catch (error){
@@ -29,20 +29,27 @@ export const save =async (req,res)=>{
 }
 
 export const login = async (req,res)=>{
-    const condition_obj = {...req.body,"status":1};
+    const condition_obj = {email: req.body.email, status: 1};
     
-    // ...req.body: Spreads all the properties from req.body into a new object.
-    //"status": 1: Adds a condition to ensure the user is active (status = 1).
     console.log(req.body);
-    var userList=await UserSchemaModel.find(condition_obj);
-    if(userList.length!=0){
-    const playload = userList[0].email;// get email from user list
-    const key = rs.generate(50); // generate random key
-    const token = jwt.sign(playload,key); // sign token with key
-    res.status(200).json({"token":token,"userdetails":userList[0]}); // token and user details
+    var userList = await UserSchemaModel.find(condition_obj);
+    
+    if(userList.length != 0){
+        // Compare password with hashed password
+        const isMatch = await bcrypt.compare(req.body.password, userList[0].password);
+        
+        if(isMatch){
+            const playload = userList[0].email;// get email from user list
+            const key = rs.generate(50); // generate random key
+            const token = jwt.sign(playload,key); // sign token with key
+            res.status(200).json({"token":token,"userdetails":userList[0]}); // token and user details
+        } else {
+            res.status(401).json({"message": "Invalid credentials"});
+        }
     }
-    else
-    res.status(500).json({"token":false}); // token false if internal error
+    else {
+        res.status(401).json({"message": "Invalid credentials"});
+    }
 }
 
 export const fetch = async (req,res)=>{

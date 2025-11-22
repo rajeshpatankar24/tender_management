@@ -10,6 +10,11 @@ npm start
 ```
 Runs on: `http://localhost:3000`
 
+**Environment Variables:** Create `tender-new/.env` (already created):
+```env
+REACT_APP_API_BASE_URL=http://localhost:5001
+```
+
 ### Backend (Node.js/Express)
 ```bash
 cd API
@@ -48,17 +53,21 @@ JWT_SECRET=your_random_secret_key
 
 ## 🔧 Configuration
 
-### Switch API URL (tender-new/src/API_URL.js)
+### Switch API URL
+
+Now uses environment variables! Update `tender-new/.env`:
 
 **Local:**
-```javascript
-const API_BASE_URL = "http://localhost:5001";
+```env
+REACT_APP_API_BASE_URL=http://localhost:5001
 ```
 
 **Production:**
-```javascript
-const API_BASE_URL = "https://tender-1-j2d4.onrender.com";
+```env
+REACT_APP_API_BASE_URL=https://tender-1-j2d4.onrender.com
 ```
+
+⚠️ **Important:** After changing .env, restart the React dev server (`npm start`)
 
 ---
 

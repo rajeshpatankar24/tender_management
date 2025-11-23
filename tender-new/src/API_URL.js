@@ -4,6 +4,9 @@
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:5001";
 
+// Debug log (remove in production if needed)
+console.log("🔗 API Base URL:", API_BASE_URL);
+
 export const __urlapi = `${API_BASE_URL}/user/`;
 export const __categoryapiurl = `${API_BASE_URL}/category/`;
 export const __subcategoryapiurl = `${API_BASE_URL}/subcategory/`;

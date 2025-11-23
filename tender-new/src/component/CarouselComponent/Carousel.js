@@ -46,12 +46,11 @@ const Carousel = () => {
               alt="Discover Tenders"
             />
             <div
-              className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-              style={{ background: "linear-gradient(135deg, rgba(37, 99, 235, 0.8) 0%, rgba(16, 185, 129, 0.7) 100%)" }}
+              className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center carousel-overlay"
             >
               <div className="container">
                 <div className="row justify-content-start">
-                  <div className="col-10 col-lg-8">
+                  <div className="col-12 col-md-10 col-lg-8">
                     <h5 className="text-white text-uppercase mb-3 fw-bold">
                       <i className="fa fa-search me-2"></i>Discover Opportunities
                     </h5>
@@ -89,12 +88,11 @@ const Carousel = () => {
               alt="Smart Bidding"
             />
             <div
-              className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-              style={{ background: "linear-gradient(135deg, rgba(16, 185, 129, 0.8) 0%, rgba(245, 158, 11, 0.7) 100%)" }}
+              className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center carousel-overlay"
             >
               <div className="container">
                 <div className="row justify-content-start">
-                  <div className="col-10 col-lg-8">
+                  <div className="col-12 col-md-10 col-lg-8">
                     <h5 className="text-white text-uppercase mb-3 fw-bold">
                       <i className="fa fa-chart-line me-2"></i>Smart Bidding
                     </h5>
@@ -132,12 +130,11 @@ const Carousel = () => {
               alt="Secure Platform"
             />
             <div
-              className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-              style={{ background: "linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.7) 100%)" }}
+              className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center carousel-overlay"
             >
               <div className="container">
                 <div className="row justify-content-start">
-                  <div className="col-10 col-lg-8">
+                  <div className="col-12 col-md-10 col-lg-8">
                     <h5 className="text-white text-uppercase mb-3 fw-bold">
                       <i className="fa fa-shield-alt me-2"></i>Secure & Compliant
                     </h5>

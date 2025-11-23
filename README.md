@@ -1,4 +1,6 @@
-# Tender Management System
+# TechTender - Digital Tender Management Platform
+
+**By TechSolution**
 
 ## 🚀 Quick Start
 
@@ -117,20 +119,54 @@ REACT_APP_API_BASE_URL=https://tender-management-1-5v0f.onrender.com
 
 4. **Deploy and test**
 
-### Frontend Deployment
+### Frontend Deployment (Vercel)
 
-1. Update `tender-new/.env` with production API URL:
-   ```env
-   REACT_APP_API_BASE_URL=https://your-render-backend-url.onrender.com
+1. **Push code to GitHub**
+
+2. **On Vercel Dashboard:**
+   - Import your GitHub repository
+   - **Root Directory:** `tender-new`
+   - **Framework:** Create React App (auto-detected)
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `build`
+
+3. **⚠️ CRITICAL: Add Environment Variable in Vercel:**
    ```
+   REACT_APP_API_BASE_URL=https://tender-management-1-5v0f.onrender.com
+   ```
+   - Go to: Project Settings → Environment Variables
+   - Add the variable above
+   - Apply to: Production, Preview, Development
+   - **MUST REDEPLOY** after adding environment variables
 
-2. Build and deploy to Render/Vercel/Netlify
+4. **Update Backend FRONTEND_URL:**
+   - After deployment, get your Vercel URL
+   - Update `FRONTEND_URL` in Render backend environment variables
+   - Example: `https://your-app.vercel.app`
+
+📖 **Detailed Guide:** See `tender-new/VERCEL_DEPLOYMENT.md`
 
 ### ⚠️ Common Deployment Issues
 
+**Backend (Render):**
 - **Error: "nodemon: not found"** → Fixed! Now included in dependencies
 - **Using wrong command** → Use `npm start` for production, NOT `npm run dev`
 - **Environment variables missing** → Set all required env vars on Render dashboard
+
+**Frontend (Vercel):**
+- **"Failed to fetch" / Network Error** → Add `REACT_APP_API_BASE_URL` in Vercel environment variables
+- **Environment variable not working** → Must REDEPLOY after adding env vars
+- **CORS errors** → Backend CORS is configured; check if backend URL is correct
+- **Check API URL in browser console** → Should see: `🔗 API Base URL: https://tender-management-1-5v0f.onrender.com`
+
+**401 Unauthorized Error:**
+- ✅ **This means backend IS connected!**
+- ❌ Wrong email/password OR account not verified
+- 📖 **See:** `tender-new/TROUBLESHOOTING_401.md` for detailed solutions
+- **Quick Fix:** 
+  1. Register a new account
+  2. Click email verification link
+  3. Login with exact credentials
 
 ---
 

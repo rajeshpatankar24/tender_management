@@ -1,11 +1,12 @@
 :root {
   --primary-color: #2563eb;
-  --secondary-color: #10b981;
+  --secondary-color: #1d4ed8;
   --dark-color: #1e293b;
-  --light-color: #f8fafc;
+  --light-color: #ffffff;
   --text-color: #334155;
   --border-radius: 12px;
   --transition: all 0.3s ease;
+  --gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
 }
 
 * {
@@ -19,6 +20,7 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
 }
 
 #container {

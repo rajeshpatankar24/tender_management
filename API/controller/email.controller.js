@@ -17,7 +17,7 @@ function senMail(email, password) {
     var mailOptions = {
         from: process.env.EMAIL_USER,
         to: email,
-        subject: 'Welcome to TECHSOL Tender Management - Verify Your Account',
+        subject: 'Welcome to TechTender - Verify Your Account',
         html: `
             <!DOCTYPE html>
             <html>
@@ -73,12 +73,12 @@ function senMail(email, password) {
             <body>
                 <div class="container">
                     <div class="header">
-                        <h1>Welcome to TECHSOL</h1>
-                        <p>Tender Management Platform</p>
+                        <h1>Welcome to TechTender</h1>
+                        <p>Digital Tender Management Platform</p>
                     </div>
                     <div class="content">
                         <h2>Account Created Successfully!</h2>
-                        <p>Thank you for registering with TECHSOL Tender Management Platform. Your account has been created successfully.</p>
+                        <p>Thank you for registering with TechTender. Your account has been created successfully.</p>
                         
                         <div class="credentials">
                             <h3>Your Login Credentials:</h3>
@@ -115,7 +115,7 @@ function senMail(email, password) {
                         <p>If you didn't create this account, please ignore this email or contact our support team.</p>
                     </div>
                     <div class="footer">
-                        <p>© 2025 TECHSOL Tender Management. All rights reserved.</p>
+                        <p>© 2025 TechTender by TechSolution. All rights reserved.</p>
                         <p>Need help? Contact us at ${process.env.EMAIL_USER}</p>
                     </div>
                 </div>

@@ -78,8 +78,8 @@ function Contact() {
               </div>
               <h5 className="mb-2">Email Us</h5>
               <p className="mb-0">
-                <a href="mailto:support@techsol.com">support@techsol.com</a><br/>
-                <a href="mailto:sales@techsol.com">sales@techsol.com</a>
+                <a href="mailto:support@techtender.com">support@techtender.com</a><br/>
+                <a href="mailto:sales@techtender.com">sales@techtender.com</a>
               </p>
             </div>
 

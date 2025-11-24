@@ -38,9 +38,16 @@ function Login() {
       setPassword("");
       setOutput("Login successful!");
       setIsSuccess(true);
-      toast.success('Login successful! 🎉');
-
       const user = response.data.userdetails;
+      
+      toast.success(`🎉 Welcome back, ${user.name}!`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("name", user.name);
       localStorage.setItem("email", user.email);
@@ -55,7 +62,15 @@ function Login() {
     } catch (error) {
       setIsSuccess(false);
       setOutput("Invalid email or incorrect password");
-      toast.error('Invalid email or password ❌');
+      
+      toast.error('❌ Invalid email or password. Please try again.', {
+        position: "top-right",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     } finally {
       setLoading(false); // Stop loader
     }

@@ -51,14 +51,14 @@ function Nav() {
                     <ul className="navbar-nav ms-auto align-items-lg-center">
                       <li className="nav-item">
                         <Link to="/admin" className="nav-link text-dark px-2 py-2 rounded-3 hover-link" onClick={closeMenu}>
-                          <i className="fas fa-tachometer-alt me-1"></i>
+                          <i className="fas fa-tachometer-alt me-2"></i>
                           <span className="nav-text">Dashboard</span>
                         </Link>
                       </li>
 
                       <li className="nav-item">
                         <Link to="/manageuser" className="nav-link text-dark px-2 py-2 rounded-3 hover-link" onClick={closeMenu}>
-                          <i className="fas fa-users-cog me-1"></i>
+                          <i className="fas fa-users me-2"></i>
                           <span className="nav-text">Users</span>
                         </Link>
                       </li>
@@ -70,7 +70,7 @@ function Nav() {
                           role="button"
                           data-bs-toggle="dropdown"
                         >
-                          <i className="fas fa-folder-tree me-1"></i>
+                          <i className="fas fa-folder-open me-2"></i>
                           <span className="nav-text">Categories</span>
                         </a>
                         <ul className="dropdown-menu">
@@ -91,7 +91,7 @@ function Nav() {
 
                       <li className="nav-item">
                         <Link to="/viewp" className="nav-link text-dark px-2 py-2 rounded-3 hover-link" onClick={closeMenu}>
-                          <i className="fas fa-file-contract me-1"></i>
+                          <i className="fas fa-file-alt me-2"></i>
                           <span className="nav-text">Tenders</span>
                         </Link>
                       </li>
@@ -103,20 +103,20 @@ function Nav() {
                           role="button"
                           data-bs-toggle="dropdown"
                         >
-                          <i className="fas fa-cog me-1"></i>
+                          <i className="fas fa-cog me-2"></i>
                           <span className="nav-text">Settings</span>
                         </a>
                         <ul className="dropdown-menu">
                           <li>
                             <Link className="dropdown-item" to="/epadmin" onClick={closeMenu}>
                               <i className="fas fa-user-edit me-2"></i>
-                              Edit Profile
+                              Profile
                             </Link>
                           </li>
                           <li>
                             <Link className="dropdown-item" to="/cpadmin" onClick={closeMenu}>
                               <i className="fas fa-key me-2"></i>
-                              Change Password
+                              Password
                             </Link>
                           </li>
                         </ul>
@@ -124,7 +124,7 @@ function Nav() {
 
                       <li className="nav-item">
                         <Link to="/logout" className="nav-link logout-link px-2 py-2 rounded-3" onClick={closeMenu}>
-                          <i className="fas fa-sign-out-alt me-1"></i>
+                          <i className="fas fa-sign-out-alt me-2"></i>
                           <span className="nav-text">Logout</span>
                         </Link>
                       </li>
@@ -165,22 +165,22 @@ function Nav() {
                     <ul className="navbar-nav ms-auto">
                       <li className="nav-item ms-2 me-2">
                         <Link to="/user" className="nav-link text-dark px-3 py-2 rounded-3 hover-link" onClick={closeMenu}>
-                          <i className="fas fa-home me-2"></i>
-                          Dashboard
+                          <i className="fas fa-tachometer-alt me-2"></i>
+                          <span className="nav-text">Dashboard</span>
                         </Link>
                       </li>
 
                       <li className="nav-item ms-2 me-2">
                         <Link to="/viewcategory" className="nav-link text-dark px-3 py-2 rounded-3 hover-link" onClick={closeMenu}>
                           <i className="fas fa-search me-2"></i>
-                          Browse Tenders
+                          <span className="nav-text">Browse</span>
                         </Link>
                       </li>
 
                       <li className="nav-item ms-2 me-2">
                         <Link to="/viewbidp" className="nav-link text-dark px-3 py-2 rounded-3 hover-link" onClick={closeMenu}>
-                          <i className="fas fa-gavel me-2"></i>
-                          My Bids
+                          <i className="fas fa-list me-2"></i>
+                          <span className="nav-text">My Bids</span>
                         </Link>
                       </li>
 
@@ -192,19 +192,19 @@ function Nav() {
                           data-bs-toggle="dropdown"
                         >
                           <i className="fas fa-cog me-2"></i>
-                          Settings
+                          <span className="nav-text">Settings</span>
                         </a>
                         <ul className="dropdown-menu">
                           <li>
                             <Link className="dropdown-item" to="/epuser" onClick={closeMenu}>
                               <i className="fas fa-user-edit me-2"></i>
-                              Edit Profile
+                              Profile
                             </Link>
                           </li>
                           <li>
                             <Link className="dropdown-item" to="/cpuser" onClick={closeMenu}>
                               <i className="fas fa-key me-2"></i>
-                              Change Password
+                              Password
                             </Link>
                           </li>
                         </ul>
@@ -213,7 +213,7 @@ function Nav() {
                       <li className="nav-item ms-2 me-2">
                         <Link to="/logout" className="nav-link text-dark px-3 py-2 rounded-3 hover-link logout-link" onClick={closeMenu}>
                           <i className="fas fa-sign-out-alt me-2"></i>
-                          Logout
+                          <span className="nav-text">Logout</span>
                         </Link>
                       </li>
                     </ul>
@@ -252,31 +252,31 @@ function Nav() {
                       <li className="nav-item ms-2 me-2">
                         <Link to="/" className="nav-link text-dark px-3 py-2 rounded-3 hover-link" onClick={closeMenu}>
                           <i className="fas fa-home me-2"></i>
-                          Home
+                          <span className="nav-text">Home</span>
                         </Link>
                       </li>
                       <li className="nav-item ms-2 me-2">
                         <Link to="/about" className="nav-link text-dark px-3 py-2 rounded-3 hover-link" onClick={closeMenu}>
                           <i className="fas fa-info-circle me-2"></i>
-                          About
+                          <span className="nav-text">About</span>
                         </Link>
                       </li>
                       <li className="nav-item ms-2 me-2">
                         <Link to="/services" className="nav-link text-dark px-3 py-2 rounded-3 hover-link" onClick={closeMenu}>
                           <i className="fas fa-briefcase me-2"></i>
-                          Services
+                          <span className="nav-text">Services</span>
                         </Link>
                       </li>
                       <li className="nav-item ms-2 me-2">
                         <Link to="/register" className="nav-link text-dark px-3 py-2 rounded-3 hover-link register-link" onClick={closeMenu}>
                           <i className="fas fa-user-plus me-2"></i>
-                          Register
+                          <span className="nav-text">Register</span>
                         </Link>
                       </li>
                       <li className="nav-item ms-2 me-2">
                         <Link to="/login" className="nav-link text-dark px-3 py-2 rounded-3 hover-link login-link" onClick={closeMenu}>
                           <i className="fas fa-sign-in-alt me-2"></i>
-                          Login
+                          <span className="nav-text">Login</span>
                         </Link>
                       </li>
                     </ul>

@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
 import { __urlapi } from '../../API_URL';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Register() {
   const [name, setName] = useState('');
@@ -12,6 +14,9 @@ function Register() {
   const [address, setAddress] = useState('');
   const [cityOptions, setCityOptions] = useState([]);
   const [city, setCity] = useState(null);
+  const [cityText, setCityText] = useState('');
+  const [useCityDropdown, setUseCityDropdown] = useState(true);
+  const [citiesLoading, setCitiesLoading] = useState(true);
   const [gender, setGender] = useState('');
   const [output, setOutput] = useState('');
   const [errors, setErrors] = useState({});
@@ -33,7 +38,14 @@ function Register() {
     else if (!/^[6-9]\d{9}$/.test(mobile)) newErrors.mobile = 'Enter valid 10-digit mobile number';
 
     if (!address.trim()) newErrors.address = 'Address is required';
-    if (!city) newErrors.city = 'City is required';
+    
+    // Check city based on input type
+    if (useCityDropdown) {
+      if (!city) newErrors.city = 'City is required';
+    } else {
+      if (!cityText.trim()) newErrors.city = 'City is required';
+    }
+    
     if (!gender) newErrors.gender = 'Gender is required';
 
     setErrors(newErrors);
@@ -48,12 +60,16 @@ function Register() {
       password,
       mobile,
       address,
-      city: city?.value || '',
+      city: useCityDropdown ? (city?.value || '') : cityText,
       gender,
     };
 
     if (!validate()) {
       setOutput('');
+      toast.warning('⚠️ Please fill all required fields correctly.', {
+        position: "top-right",
+        autoClose: 3000,
+      });
       return;
     }
 
@@ -66,18 +82,40 @@ function Register() {
         setMobile('');
         setAddress('');
         setCity(null);
+        setCityText('');
         setGender('');
-        setOutput('✅ User registered successfully!');
+        setOutput('');
         setErrors({});
+        
+        // Success toast
+        toast.success('🎉 Registration successful! Please check your email to verify your account.', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
       })
       .catch((error) => {
         console.error(error);
-        setOutput('❌ User registration failed.');
+        setOutput('');
+        
+        // Error toast
+        toast.error('❌ Registration failed! Please try again or contact support.', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
       });
   };
 
   // ---------------- FETCH CITY DATA ----------------
   useEffect(() => {
+    setCitiesLoading(true);
     axios
       .post('https://countriesnow.space/api/v0.1/countries/cities', {
         country: 'India',
@@ -88,9 +126,13 @@ function Register() {
           label: city,
         }));
         setCityOptions(formattedCities);
+        setCitiesLoading(false);
       })
       .catch((err) => {
         console.error('Error fetching cities:', err);
+        // If API fails, switch to text input
+        setUseCityDropdown(false);
+        setCitiesLoading(false);
       });
   }, []);
 
@@ -175,21 +217,56 @@ function Register() {
               {/* CITY */}
               <div className="form-group mb-3">
                 <label className="fw-semibold">City</label>
-                <Select
-                  options={cityOptions}
-                  value={city}
-                  onChange={setCity}
-                  placeholder="Search or select city"
-                  isClearable
-                  styles={{
-                    control: (base) => ({
-                      ...base,
-                      padding: '4px',
-                      borderRadius: '8px',
-                    }),
-                  }}
-                />
-                {errors.city && <small className="text-danger">{errors.city}</small>}
+                {useCityDropdown ? (
+                  <>
+                    <Select
+                      options={cityOptions}
+                      value={city}
+                      onChange={setCity}
+                      placeholder={citiesLoading ? "Loading cities..." : "Search or select city"}
+                      isClearable
+                      isLoading={citiesLoading}
+                      isDisabled={citiesLoading}
+                      styles={{
+                        control: (base) => ({
+                          ...base,
+                          padding: '4px',
+                          borderRadius: '8px',
+                        }),
+                      }}
+                    />
+                    <small className="text-muted d-block mt-1">
+                      Can't find your city?{' '}
+                      <button
+                        type="button"
+                        className="btn btn-link btn-sm p-0 text-primary"
+                        onClick={() => setUseCityDropdown(false)}
+                      >
+                        Type manually
+                      </button>
+                    </small>
+                  </>
+                ) : (
+                  <>
+                    <input
+                      type="text"
+                      className="form-control form-control-lg"
+                      placeholder="Enter your city name"
+                      onChange={(e) => setCityText(e.target.value)}
+                      value={cityText}
+                    />
+                    <small className="text-muted d-block mt-1">
+                      <button
+                        type="button"
+                        className="btn btn-link btn-sm p-0 text-primary"
+                        onClick={() => setUseCityDropdown(true)}
+                      >
+                        Select from dropdown
+                      </button>
+                    </small>
+                  </>
+                )}
+                {errors.city && <small className="text-danger d-block">{errors.city}</small>}
               </div>
 
               {/* GENDER */}
@@ -242,6 +319,9 @@ function Register() {
           </div>
         </div>
       </div>
+      
+      {/* Toast Container */}
+      <ToastContainer />
     </div>
   );
 }

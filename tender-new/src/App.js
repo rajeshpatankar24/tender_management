@@ -1,6 +1,7 @@
 import './App.css';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Header from './component/HeaderComponent/Header';
+import Topbar from './component/TopbarComponent/Topbar';
 import Nav from './component/NavComponent/Nav';
 import Content from './component/ContentComponent/Content';
 import Footer from './component/FooterComponent/Footer';
@@ -43,6 +44,7 @@ function App() {
     <>
       {/* Always visible */}
       <Header />
+      <Topbar />
       <Nav />
 
       {/* Carousel visible only when not on login/register/verify */}

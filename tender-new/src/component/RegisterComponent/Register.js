@@ -20,6 +20,7 @@ function Register() {
   const [gender, setGender] = useState('');
   const [output, setOutput] = useState('');
   const [errors, setErrors] = useState({});
+  const [isRegistering, setIsRegistering] = useState(false);
 
   // ---------------- VALIDATION ----------------
   const validate = () => {
@@ -73,6 +74,8 @@ function Register() {
       return;
     }
 
+    setIsRegistering(true); // Start loading
+
     axios
       .post(__urlapi + 'save', userDetails)
       .then(() => {
@@ -110,6 +113,9 @@ function Register() {
           pauseOnHover: true,
           draggable: true,
         });
+      })
+      .finally(() => {
+        setIsRegistering(false); // Stop loading
       });
   };
 
@@ -156,7 +162,12 @@ function Register() {
                   type="text"
                   className="form-control form-control-lg"
                   placeholder="Enter your full name"
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                    if (errors.name) {
+                      setErrors({...errors, name: ''});
+                    }
+                  }}
                   value={name}
                 />
                 {errors.name && <small className="text-danger">{errors.name}</small>}
@@ -169,7 +180,12 @@ function Register() {
                   type="email"
                   className="form-control form-control-lg"
                   placeholder="example@gmail.com"
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (errors.email) {
+                      setErrors({...errors, email: ''});
+                    }
+                  }}
                   value={email}
                 />
                 {errors.email && <small className="text-danger">{errors.email}</small>}
@@ -182,7 +198,12 @@ function Register() {
                   type="password"
                   className="form-control form-control-lg"
                   placeholder="Enter password"
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    if (errors.password) {
+                      setErrors({...errors, password: ''});
+                    }
+                  }}
                   value={password}
                 />
                 {errors.password && <small className="text-danger">{errors.password}</small>}
@@ -195,7 +216,12 @@ function Register() {
                   type="text"
                   className="form-control form-control-lg"
                   placeholder="10-digit mobile number"
-                  onChange={(e) => setMobile(e.target.value)}
+                  onChange={(e) => {
+                    setMobile(e.target.value);
+                    if (errors.mobile) {
+                      setErrors({...errors, mobile: ''});
+                    }
+                  }}
                   value={mobile}
                 />
                 {errors.mobile && <small className="text-danger">{errors.mobile}</small>}
@@ -208,7 +234,12 @@ function Register() {
                   rows="3"
                   className="form-control form-control-lg"
                   placeholder="Enter your full address"
-                  onChange={(e) => setAddress(e.target.value)}
+                  onChange={(e) => {
+                    setAddress(e.target.value);
+                    if (errors.address) {
+                      setErrors({...errors, address: ''});
+                    }
+                  }}
                   value={address}
                 ></textarea>
                 {errors.address && <small className="text-danger">{errors.address}</small>}
@@ -222,7 +253,12 @@ function Register() {
                     <Select
                       options={cityOptions}
                       value={city}
-                      onChange={setCity}
+                      onChange={(value) => {
+                        setCity(value);
+                        if (errors.city) {
+                          setErrors({...errors, city: ''});
+                        }
+                      }}
                       placeholder={citiesLoading ? "Loading cities..." : "Search or select city"}
                       isClearable
                       isLoading={citiesLoading}
@@ -252,7 +288,12 @@ function Register() {
                       type="text"
                       className="form-control form-control-lg"
                       placeholder="Enter your city name"
-                      onChange={(e) => setCityText(e.target.value)}
+                      onChange={(e) => {
+                        setCityText(e.target.value);
+                        if (errors.city) {
+                          setErrors({...errors, city: ''});
+                        }
+                      }}
                       value={cityText}
                     />
                     <small className="text-muted d-block mt-1">
@@ -278,22 +319,38 @@ function Register() {
                       className="form-check-input"
                       type="radio"
                       name="gender"
+                      id="male"
                       value="male"
-                      onChange={(e) => setGender(e.target.value)}
+                      onChange={(e) => {
+                        setGender(e.target.value);
+                        if (errors.gender) {
+                          setErrors({...errors, gender: ''});
+                        }
+                      }}
                       checked={gender === 'male'}
                     />
-                    <label className="form-check-label">Male</label>
+                    <label className="form-check-label" htmlFor="male" style={{cursor: 'pointer'}}>
+                      Male
+                    </label>
                   </div>
                   <div className="form-check">
                     <input
                       className="form-check-input"
                       type="radio"
                       name="gender"
+                      id="female"
                       value="female"
-                      onChange={(e) => setGender(e.target.value)}
+                      onChange={(e) => {
+                        setGender(e.target.value);
+                        if (errors.gender) {
+                          setErrors({...errors, gender: ''});
+                        }
+                      }}
                       checked={gender === 'female'}
                     />
-                    <label className="form-check-label">Female</label>
+                    <label className="form-check-label" htmlFor="female" style={{cursor: 'pointer'}}>
+                      Female
+                    </label>
                   </div>
                 </div>
                 {errors.gender && <small className="text-danger">{errors.gender}</small>}
@@ -304,8 +361,16 @@ function Register() {
                 type="button"
                 className="btn btn-primary btn-lg w-100 shadow-sm"
                 onClick={handleSubmit}
+                disabled={isRegistering}
               >
-                Register Now
+                {isRegistering ? (
+                  <>
+                    <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                    Registering...
+                  </>
+                ) : (
+                  'Register Now'
+                )}
               </button>
 
               {/* Redirect Link */}

@@ -28,7 +28,7 @@ function Nav() {
             <div className="container-fluid nav-bar bg-light">
               <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm p-3 py-lg-0 px-lg-4">
                 <div className="container-fluid">
-                  <a className="navbar-brand" href="#">
+                  <Link to="/" className="navbar-brand">
                     <div className="brand-logo">
                       <span className="brand-icon">TT</span>
                       <div className="brand-text">
@@ -36,7 +36,7 @@ function Nav() {
                         <span className="admin-badge">ADMIN</span>
                       </div>
                     </div>
-                  </a>
+                  </Link>
 
                   <button
                     className="navbar-toggler"
@@ -145,12 +145,12 @@ function Nav() {
             <div className="container-fluid nav-bar bg-light">
               <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm p-3 py-lg-0 px-lg-4">
                 <div className="container-fluid">
-                  <a className="navbar-brand" href="#">
+                  <Link to="/" className="navbar-brand">
                     <div className="brand-logo">
                       <span className="brand-icon">TT</span>
                       <span className="brand-name">TechTender</span>
                     </div>
-                  </a>
+                  </Link>
 
                   <button
                     className="navbar-toggler"
@@ -231,12 +231,12 @@ function Nav() {
             <div className="container-fluid nav-bar bg-light">
               <nav className="navbar navbar-expand-lg navbar-light bg-white p-3 py-lg-0 px-lg-4">
                 <div className="container-fluid">
-                  <a className="navbar-brand" href="#">
+                  <Link to="/" className="navbar-brand">
                     <div className="brand-logo">
                       <span className="brand-icon">TT</span>
                       <span className="brand-name">TechTender</span>
                     </div>
-                  </a>
+                  </Link>
 
                   <button
                     className="navbar-toggler"

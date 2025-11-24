@@ -3,7 +3,7 @@
 }
 
 .about-hero {
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
   position: relative;
   overflow: hidden;
 }
@@ -15,16 +15,16 @@
   left: -10%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
   border-radius: 50%;
 }
 
 .bg-light {
-  background: linear-gradient(135deg, #f8fafc 0%, #fef3c7 100%) !important;
+  background: #ffffff !important;
 }
 
 .text-secondary {
-  color: #10b981 !important;
+  color: #2563eb !important;
   font-weight: 700;
   letter-spacing: 2px;
   font-size: 14px;
@@ -81,11 +81,11 @@ p {
   position: absolute;
   bottom: 30px;
   right: 30px;
-  background: linear-gradient(135deg, #f59e0b, #d97706);
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   padding: 30px;
   border-radius: 20px;
   text-align: center;
-  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
   animation: float 3s ease-in-out infinite;
 }
 
@@ -116,7 +116,7 @@ p {
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, #f59e0b, #10b981);
+  background: #2563eb;
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
@@ -133,7 +133,7 @@ p {
 .mission-icon {
   width: 100px;
   height: 100px;
-  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -143,12 +143,12 @@ p {
 }
 
 .mission-icon i {
-  color: #f59e0b;
+  color: #2563eb;
   transition: all 0.4s ease;
 }
 
 .mission-card:hover .mission-icon {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   transform: scale(1.1) rotate(5deg);
 }
 
@@ -214,7 +214,7 @@ p {
   left: 0;
   width: 5px;
   height: 100%;
-  background: linear-gradient(180deg, #f59e0b, #10b981);
+  background: #2563eb;
   transform: scaleY(0);
   transition: transform 0.4s ease;
 }
@@ -231,7 +231,7 @@ p {
 .feature-number {
   font-size: 3rem;
   font-weight: 800;
-  color: #f59e0b;
+  color: #2563eb;
   opacity: 0.2;
   line-height: 1;
   margin-bottom: 16px;
@@ -260,7 +260,7 @@ p {
 .team-avatar {
   width: 100px;
   height: 100px;
-  background: linear-gradient(135deg, #f59e0b, #d97706);
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -273,7 +273,7 @@ p {
 
 .team-card:hover .team-avatar {
   transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
 }
 
 .team-social .btn {

@@ -28,19 +28,19 @@ function About() {
               </div>
               <div class="col-sm-6">
                 <div class="about-stat">
-                  <h2 class="text-success mb-0">5K+</h2>
+                  <h2 class="text-primary mb-0">5K+</h2>
                   <p class="mb-0">Active Vendors</p>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="about-stat">
-                  <h2 class="text-warning mb-0">98%</h2>
+                  <h2 class="text-primary mb-0">98%</h2>
                   <p class="mb-0">Client Satisfaction</p>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="about-stat">
-                  <h2 class="text-info mb-0">50+</h2>
+                  <h2 class="text-primary mb-0">50+</h2>
                   <p class="mb-0">Countries</p>
                 </div>
               </div>

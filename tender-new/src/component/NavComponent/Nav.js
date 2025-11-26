@@ -17,6 +17,35 @@ function Nav() {
   };
 
   useEffect(() => {
+    // Close menu on scroll
+    const handleScroll = () => {
+      closeMenu();
+    };
+
+    // Close menu on outside click
+    const handleClickOutside = (event) => {
+      const navbar = document.querySelector('.navbar');
+      const navbarCollapse = document.getElementById('navbarNav');
+      
+      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+        if (navbar && !navbar.contains(event.target)) {
+          closeMenu();
+        }
+      }
+    };
+
+    // Add event listeners
+    window.addEventListener('scroll', handleScroll);
+    document.addEventListener('click', handleClickOutside);
+
+    // Cleanup event listeners
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
     setInterval(() => {
 
       var token = localStorage.getItem("token");

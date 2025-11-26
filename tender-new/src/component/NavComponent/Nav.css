@@ -307,8 +307,11 @@
 }
 
 @media (max-width: 991px) {
+  /* Keep navbar fixed at top on mobile */
   .nav-bar {
-    top: 80px !important; /* Adjust for taller topbar on mobile */
+    position: fixed !important;
+    top: 0 !important;
+    z-index: 1020 !important;
   }
 
   .navbar {
@@ -381,13 +384,6 @@
 
   .brand-name {
     font-size: 1.3rem;
-  }
-
-  /* Make sure nav-bar stays sticky */
-  .nav-bar {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 1020 !important;
   }
 }
 

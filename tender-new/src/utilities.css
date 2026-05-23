@@ -32,14 +32,14 @@
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 
-.text-primary { color: #2563eb !important; }
-.text-secondary { color: #10b981 !important; }
-.text-success { color: #10b981 !important; }
-.text-danger { color: #ef4444 !important; }
-.text-warning { color: #f59e0b !important; }
-.text-muted { color: #94a3b8 !important; }
-.text-dark { color: #1e293b !important; }
-.text-light { color: #f8fafc !important; }
+.text-primary { color: #d97706 !important; }
+.text-secondary { color: #475569 !important; }
+.text-success { color: #16a34a !important; }
+.text-danger { color: #dc2626 !important; }
+.text-warning { color: #d97706 !important; }
+.text-muted { color: #64748b !important; }
+.text-dark { color: #0f172a !important; }
+.text-light { color: #ffffff !important; }
 
 .fw-light { font-weight: 300; }
 .fw-normal { font-weight: 400; }
@@ -49,26 +49,26 @@
 .fw-extrabold { font-weight: 800; }
 
 /* Background Utilities */
-.bg-primary { background-color: #2563eb !important; }
-.bg-secondary { background-color: #10b981 !important; }
+.bg-primary { background-color: #d97706 !important; }
+.bg-secondary { background-color: #ffffff !important; }
 .bg-light { background-color: #f8fafc !important; }
-.bg-dark { background-color: #1e293b !important; }
-.bg-white { background-color: white !important; }
+.bg-dark { background-color: #f1f5f9 !important; }
+.bg-white { background-color: #ffffff !important; }
 
 .bg-gradient-primary {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+  background: #d97706 !important;
 }
 
 .bg-gradient-secondary {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  background: #ffffff !important;
 }
 
 .bg-gradient-purple {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background: #f1f5f9 !important;
 }
 
 .bg-gradient-pink {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+  background: #d97706 !important;
 }
 
 /* Border Utilities */
@@ -79,9 +79,9 @@
 .rounded-full { border-radius: 9999px; }
 
 .border { border: 1px solid #e2e8f0; }
-.border-2 { border: 2px solid #e2e8f0; }
+.border-2 { border: 2px solid #cbd5e1; }
 .border-primary { border-color: #2563eb !important; }
-.border-secondary { border-color: #10b981 !important; }
+.border-secondary { border-color: #4f46e5 !important; }
 
 /* Shadow Utilities */
 .shadow-sm {
@@ -284,33 +284,35 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: #d97706;
   color: white;
 }
 
 .btn-primary:hover {
+  background: #b45309;
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 8px 16px rgba(217, 119, 6, 0.15);
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: #16a34a;
   color: white;
 }
 
 .btn-secondary:hover {
+  background: #15803d;
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 8px 16px rgba(22, 163, 74, 0.15);
 }
 
 .btn-outline {
   background: transparent;
-  border: 2px solid #2563eb;
-  color: #2563eb;
+  border: 2px solid #d97706;
+  color: #d97706;
 }
 
 .btn-outline:hover {
-  background: #2563eb;
+  background: #d97706;
   color: white;
 }
 

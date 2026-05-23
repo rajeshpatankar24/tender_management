@@ -1,31 +1,25 @@
-import './Topbar.css';
+function Topbar({ token }) {
+  const showTopbar = !token;
 
-function Topbar() {
+  if (!showTopbar) return null;
+
   return (
-    <div className="topbar">
-      <div className="container-fluid">
-        <div className="row align-items-center">
-          <div className="col-lg-6 col-md-12">
-            <div className="topbar-left">
-              <span className="topbar-item">
-                <i className="fas fa-envelope me-2"></i>
-                info@techtender.com
-              </span>
-              <span className="topbar-item">
-                <i className="fas fa-phone-alt me-2"></i>
-                +91 (980) 123-4567
-              </span>
-            </div>
-          </div>
-          <div className="col-lg-6 col-md-12">
-            <div className="topbar-right">
-              <span className="topbar-item">
-                <i className="fas fa-map-marker-alt me-2"></i>
-                123 Business Street, Tech City, TC 12345
-              </span>
-            </div>
-          </div>
-        </div>
+    <div className="custom-topbar bg-[#f1f5f9] border-b border-slate-200 text-slate-600 text-xs flex items-center px-4 lg:px-8 hidden lg:flex justify-between">
+      <div className="flex items-center gap-6">
+        <span className="inline-flex items-center hover:text-slate-900 transition-colors duration-200">
+          <i className="fas fa-envelope mr-2 text-[#d97706]"></i>
+          info@techtender.com
+        </span>
+        <span className="inline-flex items-center hover:text-slate-900 transition-colors duration-200">
+          <i className="fas fa-phone-alt mr-2 text-[#d97706]"></i>
+          +91 (980) 123-4567
+        </span>
+      </div>
+      <div className="flex items-center">
+        <span className="inline-flex items-center hover:text-slate-900 transition-colors duration-200">
+          <i className="fas fa-map-marker-alt mr-2 text-[#d97706]"></i>
+          123 Business Street, Tech City, TC 12345
+        </span>
       </div>
     </div>
   );

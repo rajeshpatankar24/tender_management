@@ -143,12 +143,12 @@ function Register() {
   }, []);
 
   return (
-    <div className="register-section d-flex align-items-center justify-content-center py-5 bg-light">
+    <div className="register-section d-flex align-items-center justify-content-center py-5">
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-lg-6 col-md-8">
-            <div className="card shadow-lg border-0 rounded-4 p-4 p-md-5 bg-white">
-              <h2 className="text-center mb-4 fw-bold text-primary">Create Your Account</h2>
+          <div className="col-lg-8 col-md-10">
+            <div className="card shadow-lg border-0 p-4 p-md-5">
+              <h2 className="text-center mb-4 fw-bold">Create Your Account</h2>
               {output && (
                 <div className={`alert ${output.includes('✅') ? 'alert-success' : 'alert-danger'}`}>
                   {output}
@@ -264,10 +264,44 @@ function Register() {
                       isLoading={citiesLoading}
                       isDisabled={citiesLoading}
                       styles={{
-                        control: (base) => ({
+                        control: (base, state) => ({
                           ...base,
+                          background: 'rgba(15, 23, 42, 0.6) !important',
+                          borderColor: state.isFocused ? 'var(--primary-color) !important' : 'var(--border-glass) !important',
+                          borderRadius: '12px !important',
                           padding: '4px',
-                          borderRadius: '8px',
+                          boxShadow: state.isFocused ? '0 0 0 4px var(--primary-glow) !important' : 'none !important',
+                          transition: 'var(--transition) !important',
+                        }),
+                        singleValue: (base) => ({
+                          ...base,
+                          color: 'var(--text-primary) !important',
+                        }),
+                        placeholder: (base) => ({
+                          ...base,
+                          color: 'var(--text-muted) !important',
+                        }),
+                        menu: (base) => ({
+                          ...base,
+                          background: 'var(--bg-dark-card) !important',
+                          border: '1px solid var(--border-glass) !important',
+                          borderRadius: '12px !important',
+                          backdropFilter: 'blur(24px) !important',
+                          zIndex: 9999,
+                        }),
+                        option: (base, state) => ({
+                          ...base,
+                          background: state.isSelected 
+                            ? 'var(--primary-color) !important' 
+                            : state.isFocused 
+                              ? 'rgba(255, 255, 255, 0.05) !important' 
+                              : 'transparent !important',
+                          color: 'var(--text-primary) !important',
+                          cursor: 'pointer',
+                        }),
+                        input: (base) => ({
+                          ...base,
+                          color: 'var(--text-primary) !important',
                         }),
                       }}
                     />

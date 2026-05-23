@@ -1,8 +1,9 @@
-import './App.css';
+import { useState, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Header from './component/HeaderComponent/Header';
 import Topbar from './component/TopbarComponent/Topbar';
 import Nav from './component/NavComponent/Nav';
+import Hero from './component/HeroComponent/Hero';
 import Content from './component/ContentComponent/Content';
 import Footer from './component/FooterComponent/Footer';
 import About from './component/AboutComponent/About';
@@ -10,7 +11,6 @@ import Contact from './component/ContactComponent/Contact';
 import Services from './component/ServicesComponent/Services';
 import Register from './component/RegisterComponent/Register';
 import Login from './component/LoginComponent/Login';
-import Carousel from './component/CarouselComponent/Carousel';
 import Admin from './component/AdminComponent/Admin';
 import User from './component/UserComponent/User';
 import Logout from './component/LogoutComponent/Logout';
@@ -29,26 +29,41 @@ import AddBid from './component/BidProductComponent/AddBid';
 import ViewBidProduct from './component/ViewBidProductComponent/ViewBidProduct';
 import ViewBid from './component/ViewBidComponent/ViewBid';
 import Verify from './component/VerifyComponent/verify';
-import HeroContent from './component/HeroComponent/HeroContent';
 
 function App() {
   const location = useLocation();
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  const [role, setRole] = useState(localStorage.getItem("role"));
+  const [email, setEmail] = useState(localStorage.getItem("email"));
 
-  // Hide carousel only on specific paths
-  const hideCarouselPaths = ["/login", "/register", "/verify"];
-  const hideCarousel = hideCarouselPaths.some((path) =>
-    location.pathname.startsWith(path)
-  );
+  useEffect(() => {
+    const checkAuth = () => {
+      const currentToken = localStorage.getItem("token");
+      const currentRole = localStorage.getItem("role");
+      const currentEmail = localStorage.getItem("email");
+      if (currentToken !== token || currentRole !== role || currentEmail !== email) {
+        setToken(currentToken);
+        setRole(currentRole);
+        setEmail(currentEmail);
+      }
+    };
+
+    checkAuth();
+    const interval = setInterval(checkAuth, 100);
+    window.addEventListener('storage', checkAuth);
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('storage', checkAuth);
+    };
+  }, [token, role, email, location.pathname]);
 
   return (
     <>
       {/* Always visible */}
-      <Header />
-      <Topbar />
-      <Nav />
-
-      {/* Carousel visible only when not on login/register/verify */}
-      {!hideCarousel && <Carousel />}
+      <Header token={token} role={role} email={email} />
+      <Topbar token={token} />
+      <Nav token={token} role={role} />
+      <Hero />
 
       <Routes>
         <Route path="/" element={<Content />} />

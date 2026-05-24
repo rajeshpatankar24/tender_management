@@ -1,6 +1,4 @@
-// API endpoints configuration
-// Uses environment variable from .env file
-// Default to localhost if not set
+
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:5001";
 

@@ -31,129 +31,167 @@ function Content() {
   return (
     <div className="bg-[#f8fafc] min-h-screen text-slate-600 font-sans selection:bg-[#d97706] selection:text-white">
 
-      {/* Stats Section */}
-      <section className="py-16 bg-[#f1f5f9] border-b border-slate-200">
+      {/* Introduction Section */}
+      <section className="py-16 sm:py-20 bg-white border-b border-slate-200 relative overflow-hidden">
+        {/* Subtle decorative background blur shapes */}
+        <div className="absolute top-0 right-0 w-[350px] h-[350px] bg-slate-100 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#d97706]/5 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            <div className="bg-white border border-slate-100 rounded-2xl p-6 hover:border-[#d97706]/20 transition-all duration-300 text-center space-y-2 shadow-sm hover:shadow-md">
-              <div className="w-12 h-12 rounded-xl bg-[#d97706]/10 flex items-center justify-center text-[#d97706] mx-auto text-lg">
-                <i className="fa fa-file-alt"></i>
-              </div>
-              <h3 className="font-['Outfit'] font-black text-3xl text-slate-900">10,000+</h3>
-              <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Active Tenders</p>
-            </div>
-            
-            <div className="bg-white border border-slate-100 rounded-2xl p-6 hover:border-[#d97706]/20 transition-all duration-300 text-center space-y-2 shadow-sm hover:shadow-md">
-              <div className="w-12 h-12 rounded-xl bg-[#d97706]/10 flex items-center justify-center text-[#d97706] mx-auto text-lg">
-                <i className="fa fa-users"></i>
-              </div>
-              <h3 className="font-['Outfit'] font-black text-3xl text-slate-900">5,000+</h3>
-              <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Registered Vendors</p>
-            </div>
+          
+          {/* Main Centered Intro Block */}
+          <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
 
-            <div className="bg-white border border-slate-100 rounded-2xl p-6 hover:border-[#d97706]/20 transition-all duration-300 text-center space-y-2 shadow-sm hover:shadow-md">
-              <div className="w-12 h-12 rounded-xl bg-[#d97706]/10 flex items-center justify-center text-[#d97706] mx-auto text-lg">
-                <i className="fa fa-handshake"></i>
-              </div>
-              <h3 className="font-['Outfit'] font-black text-3xl text-slate-900">8,500+</h3>
-              <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Tenders Awarded</p>
-            </div>
+            <h2 className="font-['Outfit'] font-black text-3xl sm:text-4xl text-slate-900 leading-tight">
+              Empowering Sourcing for the <span className="text-[#d97706]">Modern Era</span>
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Traditional procurement is slow, fragmented, and burdened by manual coordination. We created <strong>TechTender</strong> to digitize, secure, and accelerate the entire lifecycle. By bringing buyers, bidding companies, and vendors into one transparent, real-time collaborative workspace, we eliminate operational delays and elevate total control.
+            </p>
+          </div>
 
-            <div className="bg-white border border-slate-100 rounded-2xl p-6 hover:border-[#d97706]/20 transition-all duration-300 text-center space-y-2 shadow-sm hover:shadow-md">
-              <div className="w-12 h-12 rounded-xl bg-[#d97706]/10 flex items-center justify-center text-[#d97706] mx-auto text-lg">
-                <i className="fa fa-chart-line"></i>
+          {/* Bottom Line: The Stats Count State */}
+          <div className="pt-10 border-t border-slate-100">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              
+              <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 sm:p-5 hover:border-[#d97706]/20 transition-all duration-300 text-center space-y-1.5 shadow-sm hover:shadow-md">
+                <div className="w-9 h-9 rounded-lg bg-[#d97706]/10 flex items-center justify-center text-[#d97706] mx-auto text-sm">
+                  <i className="fa fa-file-alt"></i>
+                </div>
+                <h3 className="font-['Outfit'] font-black text-xl sm:text-2xl text-slate-900 leading-none">10,000+</h3>
+                <p className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Active Tenders</p>
               </div>
-              <h3 className="font-['Outfit'] font-black text-3xl text-slate-900">98.6%</h3>
-              <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Success Rate</p>
+              
+              <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 sm:p-5 hover:border-[#d97706]/20 transition-all duration-300 text-center space-y-1.5 shadow-sm hover:shadow-md">
+                <div className="w-9 h-9 rounded-lg bg-[#d97706]/10 flex items-center justify-center text-[#d97706] mx-auto text-sm">
+                  <i className="fa fa-users"></i>
+                </div>
+                <h3 className="font-['Outfit'] font-black text-xl sm:text-2xl text-slate-900 leading-none">5,000+</h3>
+                <p className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Registered Vendors</p>
+              </div>
+
+              <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 sm:p-5 hover:border-[#d97706]/20 transition-all duration-300 text-center space-y-1.5 shadow-sm hover:shadow-md">
+                <div className="w-9 h-9 rounded-lg bg-[#d97706]/10 flex items-center justify-center text-[#d97706] mx-auto text-sm">
+                  <i className="fa fa-handshake"></i>
+                </div>
+                <h3 className="font-['Outfit'] font-black text-xl sm:text-2xl text-slate-900 leading-none">8,500+</h3>
+                <p className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Tenders Awarded</p>
+              </div>
+
             </div>
           </div>
+
         </div>
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 lg:py-28 border-b border-slate-200/60">
+      <section className="py-12 border-b border-slate-200/60 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="font-['Outfit'] font-black text-3xl sm:text-4xl text-slate-900">How It Works</h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Our 3-step unified workflow makes corporate tender sourcing and bidding efficient and completely transparent.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 relative z-10 py-4">
-            {/* Step 1: Post Tender */}
-            <div className="bg-white rounded-[2rem] p-8 sm:p-10 relative overflow-hidden shadow-md shadow-slate-100/60 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-start border border-slate-100/80">
-              {/* Massive Watermark Step Number */}
-              <span className="absolute top-4 right-8 font-['Outfit'] font-black text-7xl text-[#fae8d4] opacity-80 select-none tracking-tighter">01</span>
+          
+          {/* Unified How It Works Card Container */}
+          <div className="border border-slate-200 rounded-[2rem] shadow-xl shadow-slate-200/50 overflow-hidden bg-white">
+            
+            {/* Mockup Style Title Banner (Slate/Blue themed) */}
+            <div className="bg-white text-center py-4 px-2 relative overflow-hidden">
+              {/* Soft background light */}
+              {/* <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-[#d97706]/10 rounded-full blur-[80px] pointer-events-none"></div> */}
               
-              {/* Peach Icon Box */}
-              <div className="w-14 h-14 bg-[#fdf2e9] rounded-full flex items-center justify-center text-[#d97706] mb-8 shadow-sm">
-                <i className="fa fa-file-upload text-xl"></i>
+              <div className="relative z-10 max-w-3xl mx-auto space-y-4">
+                <h2 className="font-['Outfit'] font-black text-3xl text-[#f0963b] leading-tight">
+                  Manage Procurement 
+                  <span className="text-[#131313]"> End to End</span>
+                </h2>
+                {/* <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-medium">
+                  Our unified MERN pipeline makes corporate tender sourcing, active vendor bidding, and final contract awards completely transparent and secure.
+                </p> */}
               </div>
-
-              {/* Title */}
-              <h3 className="font-['Outfit'] font-extrabold text-[#0f172a] text-lg sm:text-xl mb-4 text-left leading-snug">
-                Post Tender
-              </h3>
-
-              {/* Description */}
-              <p className="text-sm text-slate-500 font-medium text-left leading-relaxed">
-                Companies outline criteria, specify bills of quantities, upload tender forms, and publish requirements securely.
-              </p>
             </div>
 
-            {/* Step 2: Receive Bids */}
-            <div className="bg-white rounded-[2rem] p-8 sm:p-10 relative overflow-hidden shadow-md shadow-slate-100/60 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-start border border-slate-100/80">
-              {/* Massive Watermark Step Number */}
-              <span className="absolute top-4 right-8 font-['Outfit'] font-black text-7xl text-[#fae8d4] opacity-80 select-none tracking-tighter">02</span>
+            {/* Alternating 3x2 Grid Box Layout */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-slate-200 bg-white overflow-hidden">
               
-              {/* Peach Icon Box */}
-              <div className="w-14 h-14 bg-[#fdf2e9] rounded-full flex items-center justify-center text-[#d97706] mb-8 shadow-sm">
-                <i className="fa fa-clipboard-list text-xl"></i>
+              {/* Box 1 (Row 1, Col 1): Step 1 Image */}
+              <div className="bg-white p-8 flex items-center justify-center border-b  border-slate-200/80 min-h-[280px]">
+                <img 
+                  src="/assets/img/post_tender_illustration.png" 
+                  alt="Post Tender Illustration" 
+                  className="max-h-[180px] w-auto object-contain hover:scale-105 transition-all duration-300"
+                />
               </div>
 
-              {/* Title */}
-              <h3 className="font-['Outfit'] font-extrabold text-[#0f172a] text-lg sm:text-xl mb-4 text-left leading-snug">
-                Receive Bids
-              </h3>
-
-              {/* Description */}
-              <p className="text-sm text-slate-500 font-medium text-left leading-relaxed">
-                Vendors evaluate requirements and submit compliant pricing schedules and technical proposals in real-time.
-              </p>
-            </div>
-
-            {/* Step 3: Award Contract */}
-            <div className="bg-white rounded-[2rem] p-8 sm:p-10 relative overflow-hidden shadow-md shadow-slate-100/60 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-start border border-slate-100/80">
-              {/* Massive Watermark Step Number */}
-              <span className="absolute top-4 right-8 font-['Outfit'] font-black text-7xl text-[#fae8d4] opacity-80 select-none tracking-tighter">03</span>
-              
-              {/* Peach Icon Box */}
-              <div className="w-14 h-14 bg-[#fdf2e9] rounded-full flex items-center justify-center text-[#d97706] mb-8 shadow-sm">
-                <i className="fa fa-trophy text-xl"></i>
+              {/* Box 2 (Row 1, Col 2): Step 1 Details */}
+              <div className="bg-slate-50/60 p-8 sm:p-10 flex flex-col justify-center items-center text-center space-y-4 border-b   border-slate-200/80 min-h-[280px]">
+                
+                <h3 className="font-['Outfit'] font-black text-[#0f172a] text-lg sm:text-xl">
+                  Post Tender
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-505 font-medium leading-relaxed max-w-xs">
+                  Companies outline criteria, specify bills of quantities, upload tender forms, and publish requirements securely.
+                </p>
               </div>
 
-              {/* Title */}
-              <h3 className="font-['Outfit'] font-extrabold text-[#0f172a] text-lg sm:text-xl mb-4 text-left leading-snug">
+              {/* Box 3 (Row 1, Col 3): Step 2 Image */}
+              <div className="bg-white p-8 flex items-center justify-center border-b border-slate-200/80 min-h-[280px]">
+                <img 
+                  src="/assets/img/receive_bids_illustration.png" 
+                  alt="Receive Bids Illustration" 
+                  className="max-h-[180px] w-auto object-contain hover:scale-105 transition-all duration-300"
+                />
+              </div>
+
+              {/* Box 4 (Row 2, Col 1): Step 2 Details */}
+              <div className="bg-slate-50/60 p-8 sm:p-10 flex flex-col justify-center items-center text-center space-y-4 border-b  border-slate-200/80 min-h-[280px]">
+               
+                <h3 className="font-['Outfit'] font-black text-[#0f172a] text-lg sm:text-xl">
+                  Receive Bids
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-505 font-medium leading-relaxed max-w-xs">
+                  Vendors evaluate requirements and submit compliant pricing schedules and technical proposals in real-time.
+                </p>
+              </div>
+
+              {/* Box 5 (Row 2, Col 2): Step 3 Image */}
+              <div className="bg-white p-8 flex items-center justify-center border-b border-slate-200/80 min-h-[280px]">
+                <img 
+                  src="/assets/img/award_contract_illustration.png" 
+                  alt="Award Contract Illustration" 
+                  className="max-h-[180px] w-auto object-contain hover:scale-105 transition-all duration-300"
+                />
+              </div>
+
+              {/* Box 6 (Row 2, Col 3): Step 3 Details */}
+              <div className="bg-slate-50/60 p-8 sm:p-10 flex flex-col justify-center items-center text-center space-y-4 min-h-[280px]">
+               
+                <h3 className="font-['Outfit'] font-black text-[#0f172a] text-lg sm:text-xl">
                 Award Contract
-              </h3>
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-505 font-medium leading-relaxed max-w-xs">
+                  Evaluate all bidder proposals side-by-side transparently, select the optimum value offer, and award the contract.
+                </p>
+              </div>
 
-              {/* Description */}
-              <p className="text-sm text-slate-500 font-medium text-left leading-relaxed">
-                Evaluate all bidder proposals side-by-side transparently, select the optimum value offer, and award the contract.
-              </p>
             </div>
+
           </div>
+
+          {/* Bottom Bar: Action Button */}
+          <div className="mt-10 text-center">
+            <Link 
+              to="/register" 
+              className="inline-flex items-center justify-center bg-[#f8f6f5] hover:bg-[#d4d0cc] text-white px-8 py-3.5 rounded-full font-bold text-sm shadow-lg shadow-[#d97706]/20 transition-all duration-200 transform hover:-translate-y-0.5"
+            >
+              Get Started Now
+            </Link>
+          </div>
+
         </div>
       </section>
 
       {/* Features (Enterprise Solutions) Section */}
-      <section className="py-10 bg-[#f8fafc] border-b border-slate-200/60 flex items-center min-h-[800px] max-h-[1000px] overflow-hidden">
+      <section className="py-4 bg-[#f8fafc] border-b border-slate-400/60  flex items-center min-h-[800px] max-h-[1000px] overflow-hidden">
         <div className="max-w-[1000px] mx-auto px-4 sm:px-6 w-full flex flex-col justify-center h-full">
           <div className="text-center max-w-2xl mx-auto mb-8 space-y-2">
-            <span className="text-[#d97706] text-[10px] font-bold uppercase tracking-wider bg-[#d97706]/10 px-2.5 py-0.5 rounded-full">
-              Enterprise Solutions
-            </span>
+  
             <h2 className="font-['Outfit'] font-black text-2xl sm:text-3xl text-slate-900">
               Enterprise Tender Solutions
             </h2>

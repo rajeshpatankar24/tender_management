@@ -42,8 +42,8 @@ function Hero() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-70"
         >
-          <source src="/assets/videos/18069234-uhd_2160_2160_24fps.mp4" type="video/mp4" />
-          <source src="/assets/videos/6193682-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+          <source src="/assets/videos/background-video.webm" type="video/webm" />
+          <source src="/assets/videos/background-video.mp4" type="video/mp4" />
           <source src="/assets/videos/video.mp4" type="video/mp4" />
           <source src="/assets/img/video.mp4" type="video/mp4" />
           <source src="/video.mp4" type="video/mp4" />

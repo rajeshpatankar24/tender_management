@@ -14,6 +14,21 @@ const categorySchema = mongoose.Schema({
         type:String,
         required:[true,"Category icon name is required"],
         trim:true
+    },
+    categoryCode:{
+        type:String,
+        uppercase:true,
+        trim:true
+    },
+    description:{
+        type:String,
+        trim:true
+    },
+    status:{
+        type:String,
+        default:'active',
+        lowercase:true,
+        trim:true
     }
 });
 categorySchema.plugin(uniqueValidator);// for apply validation on categorySchema 

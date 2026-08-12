@@ -45,6 +45,14 @@ const UserSchema = mongoose.Schema({
     },
 
     role:String,
+    companyName:{
+        type:String,
+        trim:true
+    },
+    gstNumber:{
+        type:String,
+        trim:true
+    },
     status:Number,
     info:String
 });

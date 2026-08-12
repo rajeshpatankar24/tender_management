@@ -34,22 +34,12 @@ function Hero() {
   if (path === "/") {
     return (
       <section className="relative py-24 lg:py-32 overflow-hidden border-b border-slate-800 bg-slate-950">
-        {/* Background Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-70"
-        >
-          <source src="/assets/videos/background-video.webm" type="video/webm" />
-          <source src="/assets/videos/background-video.mp4" type="video/mp4" />
-          <source src="/assets/videos/video.mp4" type="video/mp4" />
-          <source src="/assets/img/video.mp4" type="video/mp4" />
-          <source src="/video.mp4" type="video/mp4" />
-          {/* High-quality abstract tech stock video fallback */}
-          <source src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0227e36f128d31544b10b7849c71912&profile_id=139&oauth2_token_id=57447761" type="video/mp4" />
-        </video>
+        {/* Background Image */}
+        <img
+          src="/assets/img/hero_background.png"
+          alt="TechTender Abstract Tech Background"
+          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-60"
+        />
 
         {/* Cinematic Dark Overlay for Ultimate Contrast and Legibility */}
         <div className="absolute inset-0 bg-slate-950/40 backdrop-blur-[1px] z-10 pointer-events-none"></div>

@@ -21,8 +21,22 @@ subcaticonnm:
 {
     type:String,
     required:[true,"sub category icon name is reqiured"],
-    trim:true,
-
+    trim:true
+},
+subcategoryCode:{
+    type:String,
+    uppercase:true,
+    trim:true
+},
+description:{
+    type:String,
+    trim:true
+},
+status:{
+    type:String,
+    default:'active',
+    lowercase:true,
+    trim:true
 }
 });
 

@@ -53,9 +53,9 @@ function ViewProduct() {
                         <td>
                           <b>Base price : &#8377;{row.baseprice}</b>
                           <br />
-                          
-                          { row.timedifference>48 ?<button class = "btn btn-danger">Bid Closed</button>:
-                          <Link to={`/bidproduct/${row._id}`} ><button>Bid Open</button></Link> }
+
+                          {row.timedifference > 48 ? <button class="btn btn-danger">Bid Closed</button> :
+                            <Link to={`/bidproduct/${row._id}`} ><button>Bid Open</button></Link>}
                         </td>
                       </tr>
                     </table>

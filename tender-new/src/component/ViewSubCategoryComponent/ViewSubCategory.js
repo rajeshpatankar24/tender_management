@@ -28,20 +28,20 @@ function ViewSubCategory() {
 
               {/*-- Main Category Grid -->*/}
               <div id="main" class="row">
-              {
-                scdetails.map((row) => (
-                        <div class="col-md-4 col-lg-3">
-                        <Link to={`/viewproduct/${row.subcatnm}`}>
-                            <div class="card category-card shadow-sm border-light rounded">
-                                <img src={`../assets/uploads/subcaticons/${row.subcaticonnm}`} class="card-img-top" alt={row.subcaticonnm} style={{"height": "180px", "object-fit": "cover"}}/>
-                                <div class="card-body text-center">
-                                    <h5 class="card-title text-primary">{row.subcatnm}</h5>
-                                </div>
-                            </div>
-                            </Link>
+                {
+                  scdetails.map((row) => (
+                    <div class="col-md-4 col-lg-3">
+                      <Link to={`/viewproduct/${row.subcatnm}`}>
+                        <div class="card category-card shadow-sm border-light rounded">
+                          <img src={`../assets/uploads/subcaticons/${row.subcaticonnm}`} class="card-img-top" alt={row.subcaticonnm} style={{ "height": "180px", "object-fit": "cover" }} />
+                          <div class="card-body text-center">
+                            <h5 class="card-title text-primary">{row.subcatnm}</h5>
+                          </div>
                         </div>
-                      ))
-                    }
+                      </Link>
+                    </div>
+                  ))
+                }
               </div>
             </div>
           </div>

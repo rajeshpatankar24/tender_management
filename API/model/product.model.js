@@ -33,6 +33,29 @@ const productSchema = mongoose.Schema({
     },
     baseprice:Number,
     uid:String,
+    tenderNumber:{
+        type:String,
+        uppercase:true,
+        trim:true
+    },
+    startDate:{
+        type:String,
+        trim:true
+    },
+    endDate:{
+        type:String,
+        trim:true
+    },
+    status:{
+        type:String,
+        default:'draft',
+        lowercase:true,
+        trim:true
+    },
+    location:{
+        type:String,
+        trim:true
+    },
     info:String
 });
 // apply the uniqueValidater plugin to ProductSchema.
